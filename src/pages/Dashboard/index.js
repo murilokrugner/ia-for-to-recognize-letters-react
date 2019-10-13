@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import { createWorker } from "tesseract.js";
 import test from "../../assets/por.png";
 
-import { Container } from "./styles";
+import api from "../../services/api";
+
+import { Container, Date } from "./styles";
 
 export default function Dashboard() {
+  const [ocr, setOcr] = useState("Recognizing...");
+  const [user, setUser] = useState([]);
+
   const worker = createWorker({
     logger: m => console.log(m)
   });
@@ -19,10 +24,20 @@ export default function Dashboard() {
     setOcr(text);
   };
 
-  const [ocr, setOcr] = useState("Recognizing...");
   useEffect(() => {
     doOCR();
-  });
+    async function loadUser() {
+      const response = await api.get("users", {
+        params: { name: "Murilo" }
+      });
+
+      setUser(response.data);
+    }
+
+    loadUser();
+  }, [doOCR]);
+
+  console.log(user);
 
   return (
     <Container>
