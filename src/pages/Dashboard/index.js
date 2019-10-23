@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 import HashLoader from "react-spinners/HashLoader";
 import { createWorker } from "tesseract.js";
-import test from "../../assets/murilo.png";
-import { Form, Input } from "@rocketseat/unform";
 import signature from "../../assets/icon.svg";
 
 import api from "../../services/api";
@@ -11,6 +10,7 @@ import { Container, Loading, File, Button, User } from "./styles";
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(false);
+  const [loadingData, setLoadingData] = useState(false);
   const [image, setImage] = useState();
   const [ocr, setOcr] = useState([]);
   const [user, setUser] = useState([]);
@@ -20,8 +20,6 @@ export default function Dashboard() {
 
     setImage(data);
   }
-
-  console.log(image);
 
   async function worker() {
     setLoading(true);
@@ -42,16 +40,26 @@ export default function Dashboard() {
     worker();
   }
 
-  const result = ocr;
+  const result = ocr.toString();
 
-  async function handleApi() {
-    const response = await api.get(`users/${result}`);
+  const upper = result.toUpperCase();
+
+  console.log(upper);
+
+  async function searchApi() {
+    setLoadingData(true);
+    const response = await api.get(`users/${upper}`);
     setUser(response.data);
+    setLoadingData(false);
+  }
+
+  function handleApi() {
+    searchApi();
   }
 
   return (
     <Container>
-      <h1>Verifique a assinatura</h1>
+      <h1>Verifique o manuscrito</h1>
       <File>
         <label htmlFor="file">
           <img src={signature} alt="file" />
@@ -75,11 +83,17 @@ export default function Dashboard() {
           Obter os dados
         </button>
       </Button>
-      {user.map(user => (
+      {loadingData ? (
+        <Loading>
+          <HashLoader color="#fff" />
+        </Loading>
+      ) : (
         <User key={user}>
-          <strong>{user.name}</strong>
+          <span>Nome: {user.name}</span>
+          <span>Curso: {user.course}</span>
+          <span>Idade: {user.age}</span>
         </User>
-      ))}
+      )}
     </Container>
   );
 }

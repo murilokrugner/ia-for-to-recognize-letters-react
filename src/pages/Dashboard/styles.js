@@ -79,4 +79,20 @@ export const Button = styled.div`
   }
 `;
 
-export const User = styled.div``;
+export const User = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 18rem;
+  height: 7rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #7159c1;
+  position: relative;
+
+  span {
+    font-weight: bold;
+    margin: 10px;
+    color: #ffffff;
+  }
+`;
