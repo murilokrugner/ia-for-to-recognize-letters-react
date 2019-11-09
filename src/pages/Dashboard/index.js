@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import HashLoader from "react-spinners/HashLoader";
+import { Link } from "react-router-dom";
 import { createWorker } from "tesseract.js";
 import signature from "../../assets/icon.svg";
 
@@ -63,7 +64,12 @@ export default function Dashboard() {
       <File>
         <label htmlFor="file">
           <img src={signature} alt="file" />
-          <input type="file" id="file" onChange={handleImage} />
+          <input
+            type="file"
+            id="file"
+            accept="video/*;capture=camrecorder"
+            onChange={handleImage}
+          />
         </label>
       </File>
       {loading ? (
@@ -89,11 +95,17 @@ export default function Dashboard() {
         </Loading>
       ) : (
         <User key={user}>
-          <span>Nome: {user.name}</span>
-          <span>Curso: {user.course}</span>
-          <span>Idade: {user.age}</span>
+          {user.map(user => (
+            <span>Nome: {user.name}</span>
+          ))}
         </User>
       )}
+
+      <Link to="/">
+        <button className="cancel" type="button">
+          Início
+        </button>
+      </Link>
     </Container>
   );
 }

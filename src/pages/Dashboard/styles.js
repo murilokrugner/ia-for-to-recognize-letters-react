@@ -18,6 +18,22 @@ export const Container = styled.div`
     margin-top: 100px;
     color: #fff;
   }
+
+  a {
+    margin-top: 50px;
+  }
+
+  button {
+    margin: 40px 0 0;
+    height: 30px;
+    width: 80px;
+    background: #4169e1;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+  }
 `;
 
 export const Loading = styled.div`
