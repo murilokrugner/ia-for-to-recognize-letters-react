@@ -26,8 +26,9 @@ export default function Register() {
   const [user, setUser] = useState();
 
   async function handleSubmit({ name, course, age }) {
+    const upperName = name.toUpperCase();
     const response = await api.post("/users", {
-      name,
+      upperName,
       course,
       age
     });

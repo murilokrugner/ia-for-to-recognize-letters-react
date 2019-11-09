@@ -14,7 +14,7 @@ export default function Dashboard() {
   const [loadingData, setLoadingData] = useState(false);
   const [image, setImage] = useState();
   const [ocr, setOcr] = useState([]);
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState([""]);
 
   function handleImage(e) {
     const data = e.target.files[0];
@@ -45,12 +45,11 @@ export default function Dashboard() {
 
   const upper = result.toUpperCase();
 
-  console.log(upper);
-
   async function searchApi() {
     setLoadingData(true);
     const response = await api.get(`users/${upper}`);
     setUser(response.data);
+    console.log(response.data);
     setLoadingData(false);
   }
 
@@ -94,9 +93,15 @@ export default function Dashboard() {
           <HashLoader color="#fff" />
         </Loading>
       ) : (
-        <User key={user}>
+        <User>
+          <h5>Resultados:</h5>
           {user.map(user => (
-            <span>Nome: {user.name}</span>
+            <ul key={user}>
+              <li>Nome: {user.name}</li>
+              <li>Curso: {user.course}</li>
+              <li>Idade: {user.age}</li>
+              <hr />
+            </ul>
           ))}
         </User>
       )}

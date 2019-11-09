@@ -25,6 +25,7 @@ export const Container = styled.div`
 
   button {
     margin: 40px 0 0;
+    margin-bottom: 20px;
     height: 30px;
     width: 80px;
     background: #4169e1;
@@ -100,15 +101,26 @@ export const User = styled.div`
   flex-direction: column;
   margin-top: 30px;
   width: 18rem;
-  height: 7rem;
+  height: 100%;
   border-radius: 8px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #7159c1;
   position: relative;
 
-  span {
+  h5 {
+    display: flex;
+    justify-content: center;
     font-weight: bold;
     margin: 10px;
     color: #ffffff;
+  }
+
+  ul {
+    list-style: none;
+    li {
+      font-weight: bold;
+      margin: 10px;
+      color: #ffffff;
+    }
   }
 `;

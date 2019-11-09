@@ -18,6 +18,18 @@ export const Container = styled.div`
     width: 180px;
     border-radius: 50%;
   }
+
+  span.powered {
+    font-size: 11px;
+    margin-top: 80px;
+    color: #fff;
+  }
+
+  span {
+    font-size: 11px;
+    margin-top: 10px;
+    color: #fff;
+  }
 `;
 
 export const Buttons = styled.div`

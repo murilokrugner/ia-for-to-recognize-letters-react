@@ -21,6 +21,11 @@ export default function Home() {
           <button type="button">IA</button>
         </Link>
       </Buttons>
+
+      <span className="powered">
+        Powered by Murilo Krugner and Matheus Andreta
+      </span>
+      <span>Engenharia de Computação 4° têrmo - 2019</span>
     </Container>
   );
 }
