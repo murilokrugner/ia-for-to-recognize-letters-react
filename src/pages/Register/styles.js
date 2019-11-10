@@ -13,6 +13,11 @@ export const Container = styled.div`
     font-weight: bold;
   }
 
+  h6 {
+    margin-top:10px;
+    color: #fff;
+  }
+
   form {
     display: flex;
     width: 300px;
@@ -36,7 +41,7 @@ export const Container = styled.div`
       margin: 5px 0 0;
       margin-top: 50px;
       height: 44px;
-      background: #ff2f84;
+      background: #3C5D80;
       font-weight: bold;
       color: #fff;
       border: 0;
@@ -64,7 +69,7 @@ export const Container = styled.div`
   }
 
   span {
-    color: #fb6f91;
+    color: #ffff;
     align-self: flex-start;
     margin: 0 0 10px;
     font-weight: bold;
@@ -77,7 +82,7 @@ export const Container = styled.div`
       margin: 40px 0 0;
       height: 30px;
       width: 80px;
-      background: #4169e1;
+      background: #6094CC;
       font-weight: bold;
       color: #fff;
       border: 0;

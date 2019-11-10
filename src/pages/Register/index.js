@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { toast } from "react-toastify";
 import { Form, Input } from "@rocketseat/unform";
 import * as Yup from "yup";
@@ -23,12 +23,9 @@ const schema = Yup.object().shape({
 });
 
 export default function Register() {
-  const [user, setUser] = useState();
-
   async function handleSubmit({ name, course, age }) {
-    const upperName = name.toUpperCase();
     const response = await api.post("/users", {
-      upperName,
+      name,
       course,
       age
     });
@@ -40,8 +37,6 @@ export default function Register() {
     if (response.request.status === 400) {
       toast.error("Cadastro não realizado, verifique todos os campos!");
     }
-
-    console.log(response);
   }
 
   useEffect(() => {}, []);
@@ -50,9 +45,11 @@ export default function Register() {
     <Container>
       <h1>Cadastro</h1>
 
+      <h6>Escreva o seu nome em letras maiúsculas</h6>
+
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="name" type="text" placeholder="Primeiro Nome" />
-        <Input name="course" placeholder="Curso" />
+        <Input name="course" type="text"placeholder="Curso" />
         <Input name="age" type="number" placeholder="Sua idade" />
 
         <button type="submit">Cadastrar</button>

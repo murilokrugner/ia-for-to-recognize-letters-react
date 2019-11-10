@@ -43,7 +43,7 @@ export const Buttons = styled.div`
     margin: 40px 0 0;
     height: 50px;
     width: 100px;
-    background: #ff2f84;
+    background: #3C5D80;
     font-weight: bold;
     color: #fff;
     border: 0;

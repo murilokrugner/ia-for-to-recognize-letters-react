@@ -28,7 +28,7 @@ export const Container = styled.div`
     margin-bottom: 20px;
     height: 30px;
     width: 80px;
-    background: #4169e1;
+    background: #6094CC;
     font-weight: bold;
     color: #fff;
     border: 0;
@@ -64,6 +64,11 @@ export const File = styled.div`
       color: #000;
     }
   }
+
+  h6 {
+    margin-top: 5px;
+    color: #fff;
+  }
 `;
 
 export const Button = styled.div`
@@ -74,7 +79,7 @@ export const Button = styled.div`
     margin: 40px 0 0;
     height: 50px;
     width: 100px;
-    background: #ff2f84;
+    background: #3C5D80;
     font-weight: bold;
     color: #fff;
     border: 0;
@@ -87,7 +92,7 @@ export const Button = styled.div`
     margin-left: 20px;
     height: 50px;
     width: 100px;
-    background: #ff2f84;
+    background: #3C5D80;
     font-weight: bold;
     color: #fff;
     border: 0;
@@ -104,7 +109,7 @@ export const User = styled.div`
   height: 100%;
   border-radius: 8px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-  background-color: #7159c1;
+  background-color: #1E2E40;
   position: relative;
 
   h5 {

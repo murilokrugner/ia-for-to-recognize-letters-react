@@ -70,6 +70,7 @@ export default function Dashboard() {
             onChange={handleImage}
           />
         </label>
+        <h6>clique aqui</h6>
       </File>
       {loading ? (
         <Loading>
