@@ -14,8 +14,9 @@ export const Container = styled.div`
   }
 
   h6 {
-    margin-top:10px;
+    margin-top: 10px;
     color: #fff;
+    font-size: 15px;
   }
 
   form {
@@ -41,7 +42,7 @@ export const Container = styled.div`
       margin: 5px 0 0;
       margin-top: 50px;
       height: 44px;
-      background: #3C5D80;
+      background: #3c5d80;
       font-weight: bold;
       color: #fff;
       border: 0;
@@ -82,7 +83,7 @@ export const Container = styled.div`
       margin: 40px 0 0;
       height: 30px;
       width: 80px;
-      background: #6094CC;
+      background: #6094cc;
       font-weight: bold;
       color: #fff;
       border: 0;

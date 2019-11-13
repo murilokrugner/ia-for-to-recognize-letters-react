@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 130px;
+  margin-top: 120px;
 
   h1 {
     color: #fff;
@@ -14,9 +14,9 @@ export const Container = styled.div`
 
   img {
     margin-top: 40px;
-    height: 150px;
+    height: 300px;
     width: 180px;
-    border-radius: 50%;
+    border-radius: 10px;
   }
 
   span.powered {
@@ -43,7 +43,7 @@ export const Buttons = styled.div`
     margin: 40px 0 0;
     height: 50px;
     width: 100px;
-    background: #3C5D80;
+    background: #3c5d80;
     font-weight: bold;
     color: #fff;
     border: 0;
