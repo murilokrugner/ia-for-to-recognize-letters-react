@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import fabioti from "../../assets/fabioti.gif";
+import fabio from "../../assets/fabio.gif";
 
 import { Container, Buttons } from "./styles";
 
@@ -10,7 +11,7 @@ export default function Home() {
     <Container>
       <h1>Bem vindo(a)</h1>
 
-      <img src={fabioti} alt="bem vindo" />
+      <img src={fabio} alt="bem vindo" />
 
       <Buttons>
         <Link to="/register">
